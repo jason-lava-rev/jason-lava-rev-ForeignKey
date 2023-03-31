@@ -1,5 +1,4 @@
 
-
 import Util.ConnectionUtil;
 import Util.FileUtil;
 
@@ -89,6 +88,7 @@ public class CreateTableWithForeignKey {
          * the site_user table's id column.
          */
         String sql = FileUtil.parseSQLFile("problem1.sql");
+        sql = "CREATE TABLE post (id SERIAL PRIMARY KEY, post varchar(255), user_fk int REFERENCES site_user(id));";
 
         try {
             Connection connection = ConnectionUtil.getConnection();
